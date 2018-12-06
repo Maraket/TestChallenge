@@ -54,7 +54,7 @@ export class Service {
             catchError((err: Error) => {
                 if (err instanceof HttpException)
                     throw err;
-                throw new InternalServerErrorException('Uh oh, something unexpected happened');
+                throw new InternalServerErrorException(err.message);
             }),
         );
     }
